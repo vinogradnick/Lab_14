@@ -56,6 +56,11 @@ namespace Controllers
             return new fakeData();
         }
 
+        public static fakeData operator %(fakeData a, fakeData b)
+        {
+            return new fakeData();
+        }
+
         public override string ToString()
         {
             return a.ToString();
@@ -84,6 +89,9 @@ namespace Controllers
 
             switch (command[0])
             {
+                case '%':
+                    result = value1 % value2;
+                    break;
                 case '/':
                     result = value1 / value2;
                     break;
