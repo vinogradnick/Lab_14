@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.UserInputBox = new System.Windows.Forms.TextBox();
             this.DivisionButton = new System.Windows.Forms.Button();
             this.MultiplicationButton = new System.Windows.Forms.Button();
             this.MinusButton = new System.Windows.Forms.Button();
@@ -52,21 +51,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
+            this.UserInputBox = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // UserInputBox
-            // 
-            this.UserInputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UserInputBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserInputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserInputBox.Location = new System.Drawing.Point(0, 0);
-            this.UserInputBox.Margin = new System.Windows.Forms.Padding(5);
-            this.UserInputBox.Name = "UserInputBox";
-            this.UserInputBox.Size = new System.Drawing.Size(463, 49);
-            this.UserInputBox.TabIndex = 0;
-            this.UserInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.UserInputBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // DivisionButton
             // 
@@ -324,12 +311,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
+            this.tabControl1.Location = new System.Drawing.Point(3, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(178, 309);
+            this.tabControl1.Size = new System.Drawing.Size(175, 309);
             this.tabControl1.TabIndex = 20;
             // 
             // tabPage1
@@ -349,7 +335,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(170, 280);
+            this.tabPage2.Size = new System.Drawing.Size(167, 280);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Память";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -367,11 +353,25 @@
             this.button5.Text = ",";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // UserInputBox
+            // 
+            this.UserInputBox.BeepOnError = true;
+            this.UserInputBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserInputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserInputBox.Location = new System.Drawing.Point(0, 0);
+            this.UserInputBox.Mask = "000 000 000 000 000 000 000 000 000 000 000 000 000 000 000";
+            this.UserInputBox.Name = "UserInputBox";
+            this.UserInputBox.PromptChar = ' ';
+            this.UserInputBox.Size = new System.Drawing.Size(463, 47);
+            this.UserInputBox.TabIndex = 22;
+            this.UserInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(463, 358);
+            this.Controls.Add(this.UserInputBox);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Number_7_Button);
@@ -392,7 +392,6 @@
             this.Controls.Add(this.MinusButton);
             this.Controls.Add(this.MultiplicationButton);
             this.Controls.Add(this.DivisionButton);
-            this.Controls.Add(this.UserInputBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
@@ -404,8 +403,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox UserInputBox;
         private System.Windows.Forms.Button DivisionButton;
         private System.Windows.Forms.Button MultiplicationButton;
         private System.Windows.Forms.Button MinusButton;
@@ -428,6 +425,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.MaskedTextBox UserInputBox;
     }
 }
 

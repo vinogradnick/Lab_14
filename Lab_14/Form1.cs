@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,15 @@ namespace Lab_14
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Добавление пробелов к строке в которую вводится число
+        /// </summary>
+        private void FilterateStrings()
+        {
+            string fmt = "000 000 000";
+            
 
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
