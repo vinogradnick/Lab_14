@@ -136,7 +136,8 @@ namespace Lab_14
             {
                 String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
                 UserInputBox.Text = results[2];
-                HistoryListBox.DataSource = ListenserHistoryBox();
+
+                RedrawHistoryBox();
 
 
             }
@@ -183,32 +184,46 @@ namespace Lab_14
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            UserInputBox.Text = Values[0];
-            Values[1] = "";
-            symbol = "";
+            try
+            {
+                Values[0] = Controllers.Calc.Reset()[2];
+                UserInputBox.Text = Values[0];
+                Values[1] = "";
+                symbol = "";
+            }
+            catch (Exception) {
+                ClearAllData();
+            }
+            RedrawHistoryBox();
         }
 
         private void HistoryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
 
-        private List<string> ListenserHistoryBox()
+        private void RedrawHistoryBox()
         {
-            List<string> list = new List<string>();
+            HistoryListBox.Items.Clear();
             foreach (var item in Controllers.Calc.history)
             {
-                list.Add($"{item.ToStringArray()[0]}{item.ToStringArray()[3]} {item.ToStringArray()[1]} = {item.ToStringArray()[2]}");
-                         }
-
-            return list;
+                HistoryListBox.Items.Add($"{item.ToStringArray()[0]}{item.ToStringArray()[3]} {item.ToStringArray()[1]} = {item.ToStringArray()[2]}");
+            }
+            
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void ClearAllData()
         {
+            Controllers.Calc.history.Clear();
+            RedrawHistoryBox();
             Values[0] = "";
             Values[1] = "";
             RefreshData();
             symbol = "";
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            ClearAllData();
         }
 
         private void RDivisionButton_Click(object sender, EventArgs e)

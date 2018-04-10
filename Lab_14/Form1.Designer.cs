@@ -43,15 +43,15 @@
             this.Number_5_Button = new System.Windows.Forms.Button();
             this.Number_8_Button = new System.Windows.Forms.Button();
             this.EquallyButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.ResetButton = new System.Windows.Forms.Button();
             this.Number_1_Button = new System.Windows.Forms.Button();
             this.Number_4_Button = new System.Windows.Forms.Button();
             this.Number_7_Button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.UserInputBox = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.HistoryListBox = new System.Windows.Forms.ListBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -255,19 +255,19 @@
             this.EquallyButton.UseVisualStyleBackColor = false;
             this.EquallyButton.Click += new System.EventHandler(this.EquallyButton_Click);
             // 
-            // CancelButton
+            // ResetButton
             // 
-            this.CancelButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(331, 59);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(70, 58);
-            this.CancelButton.TabIndex = 16;
-            this.CancelButton.Text = "C";
-            this.CancelButton.UseVisualStyleBackColor = false;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.ResetButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ResetButton.Location = new System.Drawing.Point(331, 59);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(70, 58);
+            this.ResetButton.TabIndex = 16;
+            this.ResetButton.Text = "C";
+            this.ResetButton.UseVisualStyleBackColor = false;
+            this.ResetButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // Number_1_Button
             // 
@@ -330,7 +330,7 @@
             this.UserInputBox.Location = new System.Drawing.Point(3, 9);
             this.UserInputBox.Margin = new System.Windows.Forms.Padding(0);
             this.UserInputBox.Name = "UserInputBox";
-            this.UserInputBox.Size = new System.Drawing.Size(607, 47);
+            this.UserInputBox.Size = new System.Drawing.Size(607, 57);
             this.UserInputBox.TabIndex = 22;
             this.UserInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.UserInputBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -339,13 +339,24 @@
             // 
             this.tabPage1.Controls.Add(this.HistoryListBox);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(317, 271);
+            this.tabPage1.Size = new System.Drawing.Size(317, 267);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "История";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // HistoryListBox
+            // 
+            this.HistoryListBox.FormattingEnabled = true;
+            this.HistoryListBox.ItemHeight = 20;
+            this.HistoryListBox.Location = new System.Drawing.Point(0, 0);
+            this.HistoryListBox.Name = "HistoryListBox";
+            this.HistoryListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.HistoryListBox.Size = new System.Drawing.Size(317, 244);
+            this.HistoryListBox.TabIndex = 0;
+            this.HistoryListBox.SelectedIndexChanged += new System.EventHandler(this.HistoryListBox_SelectedIndexChanged);
             // 
             // tabControl1
             // 
@@ -356,16 +367,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(325, 300);
             this.tabControl1.TabIndex = 20;
-            // 
-            // HistoryListBox
-            // 
-            this.HistoryListBox.FormattingEnabled = true;
-            this.HistoryListBox.ItemHeight = 16;
-            this.HistoryListBox.Location = new System.Drawing.Point(0, 0);
-            this.HistoryListBox.Name = "HistoryListBox";
-            this.HistoryListBox.Size = new System.Drawing.Size(317, 260);
-            this.HistoryListBox.TabIndex = 0;
-            this.HistoryListBox.SelectedIndexChanged += new System.EventHandler(this.HistoryListBox_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -378,7 +379,7 @@
             this.Controls.Add(this.Number_7_Button);
             this.Controls.Add(this.Number_4_Button);
             this.Controls.Add(this.Number_1_Button);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.EquallyButton);
             this.Controls.Add(this.Number_8_Button);
             this.Controls.Add(this.Number_5_Button);
@@ -420,15 +421,15 @@
         private System.Windows.Forms.Button Number_5_Button;
         private System.Windows.Forms.Button Number_8_Button;
         private System.Windows.Forms.Button EquallyButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Button Number_1_Button;
         private System.Windows.Forms.Button Number_4_Button;
         private System.Windows.Forms.Button Number_7_Button;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox UserInputBox;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ListBox HistoryListBox;
         private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.ListBox HistoryListBox;
     }
 }
 
