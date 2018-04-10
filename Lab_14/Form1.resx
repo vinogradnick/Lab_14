@@ -120,15 +120,14 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RefreshButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAGRSURBVFhH7ZdtsYMwEEVjAS94QAIasIADHOAAIRjAAA7wQN/JcJkkDR+F0vx5ZyZDgbD37rIE
-        auYAY8zuOKLv+3mapmXvmK8b0LyqquZxHJej22xGJIumaTxxxh4I5nnuza/rerci0YjDMHiByEa/z4AR
-        9xpibVXjLSLiWZatF7IPnxgQbiLEVCwXL6IrXpalV7orBoAYRVGsJsJKrBGZKLeIh1w1IGQCDS+xZWub
-        JTZB3DXgJkhzCxuRskggdp++BbGlo1thDahj2T5NqGUoTejqSdxqW+2u6+wOTfIr1AtWWyVp23Y5/Txo
-        oWm19XjwEvkVaKnqf9t7j9dVpPtvIL2B5E2Y/DFMsRCp6lY7+VLMQd0Gtk8TalkDrqskr2M4+iC5CzH1
-        EkJLrAbcCbFPsrsQM5agtwLtfZRehRgSj30ZewbANYHbOz3BtapqTBzeDIB7IYOO/eQRZa66/SiRqAGg
-        dGpMDRYQVrHYss0xzmmR0bj018wlzObsOFu1QwOCLFg6CRxmyeAY55hzvnnn+QXFtK0cOyQsmwAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAZFJREFUWEft
+        l22xgzAQRWMBL3hAAhqwgAMc4AAhGMAADvBA38lwmSQNH4XS/HlnJkOBsPfusgRq5gBjzO44ou/7eZqm
+        Ze+YrxvQvKqq5nEcl6PbbEYki6ZpPHHGHgjmee7Nr+t6tyLRiMMweIHIRr/PgBH3GmJtVeMtIuJZlq0X
+        sg+fGBBuIsRULBcvoitelqVXuisGgBhFUawmwkqsEZkot4iHXDUgZAINL7Fla5slNkHcNeAmSHMLG5Gy
+        SCB2n74FsaWjW2ENqGPZPk2oZShN6OpJ3Gpb7a7r7A5N8ivUC1ZbJWnbdjn9PGihabX1ePAS+RVoqep/
+        23uP11Wk+28gvYHkTZj8MUyxEKnqVjv5UsxB3Qa2TxNqWQOuqySvYzj6ILkLMfUSQkusBtwJsU+yuxAz
+        lqC3Au19lF6FGBKPfRl7BsA1gds7PcG1qmpMHN4MgHshg4795BFlrrr9KJGoAaB0akwNFhBWsdiyzTHO
+        aZHRuPTXzCXM5uw4W7VDA4IsWDoJHGbJ4BjnmHO+eef5BcW0rRw7JCybAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

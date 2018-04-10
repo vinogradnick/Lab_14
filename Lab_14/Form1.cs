@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Lab_14
 {
@@ -130,7 +132,19 @@ namespace Lab_14
             Values[1] = InputUserData;
             InputUserData = "";
             UserInputBox.Text = InputUserData;
-            MessageBox.Show($"{Values[0]}   {Values[1]}");
+            try
+            {
+                String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
+                UserInputBox.Text = results[2];
+                HistoryListBox.DataSource = Controllers.Calc.history.ToArray();
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
         private void PlusButton_Click(object sender, EventArgs e)
@@ -165,6 +179,15 @@ namespace Lab_14
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            Controllers.Calc.Reset();
+        }
+
+        private void HistoryListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

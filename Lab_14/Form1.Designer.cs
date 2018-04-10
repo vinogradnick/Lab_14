@@ -47,11 +47,12 @@
             this.Number_1_Button = new System.Windows.Forms.Button();
             this.Number_4_Button = new System.Windows.Forms.Button();
             this.Number_7_Button = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.UserInputBox = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.HistoryListBox = new System.Windows.Forms.ListBox();
+            this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,6 +196,7 @@
             this.RefreshButton.TabIndex = 11;
             this.RefreshButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RefreshButton.UseVisualStyleBackColor = false;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // Number_2_Button
             // 
@@ -307,39 +309,6 @@
             this.Number_7_Button.UseVisualStyleBackColor = false;
             this.Number_7_Button.Click += new System.EventHandler(this.Number_7_Button_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tabControl1.Location = new System.Drawing.Point(3, 59);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(233, 300);
-            this.tabControl1.TabIndex = 20;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(170, 283);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "История";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(225, 271);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Память";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -363,6 +332,38 @@
             this.UserInputBox.TabIndex = 22;
             this.UserInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.UserInputBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.HistoryListBox);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(317, 271);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "История";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabControl1.Location = new System.Drawing.Point(3, 59);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(325, 300);
+            this.tabControl1.TabIndex = 20;
+            // 
+            // HistoryListBox
+            // 
+            this.HistoryListBox.FormattingEnabled = true;
+            this.HistoryListBox.ItemHeight = 16;
+            this.HistoryListBox.Location = new System.Drawing.Point(0, 0);
+            this.HistoryListBox.Name = "HistoryListBox";
+            this.HistoryListBox.Size = new System.Drawing.Size(317, 260);
+            this.HistoryListBox.TabIndex = 0;
+            this.HistoryListBox.SelectedIndexChanged += new System.EventHandler(this.HistoryListBox_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -395,6 +396,7 @@
             this.Name = "Form1";
             this.Text = "Калькулятор";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -420,11 +422,11 @@
         private System.Windows.Forms.Button Number_1_Button;
         private System.Windows.Forms.Button Number_4_Button;
         private System.Windows.Forms.Button Number_7_Button;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox UserInputBox;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ListBox HistoryListBox;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 

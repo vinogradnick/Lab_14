@@ -9,7 +9,7 @@ using Models;
 
 namespace Controllers
 {
-    class HistoryElement
+    public class HistoryElement
     {
         string number1, number2, result, command;
         public HistoryElement(string number1, string number2, string result, string command)
@@ -74,11 +74,11 @@ namespace Controllers
 
     }
 
-    class Calc
+   public class Calc
     {
-        private static List<HistoryElement> history = new List<HistoryElement>();
+        public static List<HistoryElement> history = new List<HistoryElement>();
 
-        static public string[] Calculate(string inputNumber1, string inputNumber2, string command)
+        public static string[] Calculate(string inputNumber1, string inputNumber2, string command)
         {
             CheckNumber(inputNumber1, "Первый аргумент");
             CheckNumber(inputNumber2, "Второй аргумент");
