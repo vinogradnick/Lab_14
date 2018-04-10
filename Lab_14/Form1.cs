@@ -17,22 +17,42 @@ namespace Lab_14
         /// Входная строка в которую производится ввод
         /// </summary>
         private string InputUserData;
+
+        private string symbol = "";
+
+        private string[] Values = new string[2];
         public Form1()
         {
             InitializeComponent();
+
+        }
+        /// <summary>
+        /// Обновление данных
+        /// </summary>
+        private void RefreshData()
+        {
+            InputUserData = UserInputBox.Text;
+            Values[0] = InputUserData;
+            InputUserData = "";
+            UserInputBox.Text = InputUserData;
         }
         /// <summary>
         /// Добавление пробелов к строке в которую вводится число
         /// </summary>
         private void FilterateStrings()
         {
-            string fmt = "000 000 000";
+            
             
 
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 48 || e.KeyChar >= 59) && e.KeyChar != 8)
+                e.Handled = true;
         }
 
         private void Number_3_Button_Click(object sender, EventArgs e)
@@ -106,25 +126,43 @@ namespace Lab_14
 
         private void EquallyButton_Click(object sender, EventArgs e)
         {
-
+            UserInputBox.Text = InputUserData;
+            Values[1] = InputUserData;
+            InputUserData = "";
+            UserInputBox.Text = InputUserData;
+            MessageBox.Show($"{Values[0]}   {Values[1]}");
         }
 
         private void PlusButton_Click(object sender, EventArgs e)
         {
-
+            symbol = "+";
+            RefreshData();
         }
 
         private void MinusButton_Click(object sender, EventArgs e)
         {
-
+            symbol = "-";
+            RefreshData();
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
         {
-
+            symbol = "*";
+            RefreshData();
         }
 
         private void DivisionButton_Click(object sender, EventArgs e)
+        {
+            symbol = "/";
+            RefreshData();
+        }
+
+        private void UserInputBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
