@@ -136,7 +136,7 @@ namespace Lab_14
             {
                 String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
                 UserInputBox.Text = results[2];
-                HistoryListBox.DataSource = Controllers.Calc.history.ToArray();
+                HistoryListBox.DataSource = ListenserHistoryBox();
 
 
             }
@@ -183,11 +183,38 @@ namespace Lab_14
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            Controllers.Calc.Reset();
+            UserInputBox.Text = Values[0];
+            Values[1] = "";
+            symbol = "";
         }
 
         private void HistoryListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private List<string> ListenserHistoryBox()
+        {
+            List<string> list = new List<string>();
+            foreach (var item in Controllers.Calc.history)
+            {
+                list.Add($"{item.ToStringArray()[0]}{item.ToStringArray()[3]} {item.ToStringArray()[1]} = {item.ToStringArray()[2]}");
+                         }
+
+            return list;
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Values[0] = "";
+            Values[1] = "";
+            RefreshData();
+            symbol = "";
+        }
+
+        private void RDivisionButton_Click(object sender, EventArgs e)
+        {
+            symbol = "%";
+            RefreshData();
         }
     }
 }

@@ -125,6 +125,7 @@
             this.RDivisionButton.TabIndex = 6;
             this.RDivisionButton.Text = "%";
             this.RDivisionButton.UseVisualStyleBackColor = false;
+            this.RDivisionButton.Click += new System.EventHandler(this.RDivisionButton_Click);
             // 
             // Number_3_Button
             // 
@@ -266,6 +267,7 @@
             this.CancelButton.TabIndex = 16;
             this.CancelButton.Text = "C";
             this.CancelButton.UseVisualStyleBackColor = false;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // Number_1_Button
             // 
