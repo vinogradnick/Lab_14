@@ -10,7 +10,7 @@ namespace Controllers
     {
         static void Main(string[] args)
         {
-            Calc.Calculate("123", "234", "1");
+            Calc.Calculate("123", "234", "1").ret();
             Console.ReadLine();
         }
     }
