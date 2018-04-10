@@ -42,7 +42,8 @@ namespace Models
         /// <exception cref="ArgumentException">Исключение вызывается, если строковое представление задано в неверном формате или число превышает допустимые границы значений.</exception>
         public Number(string num)
         {
-            bool isConvertable = decimal.TryParse(num, out var value);
+            decimal value;
+            bool isConvertable = decimal.TryParse(num, out value);
             if (!isConvertable)
             {
                 throw new ArgumentException("Число задано в неверном формате.");
@@ -74,12 +75,12 @@ namespace Models
 
         private void CheckBounds(decimal value)
         {
-            if (value >= MinValue)
+            if (value < MinValue)
             {
                 throw new ArgumentException("Число меньше минимально допустимого.");
             }
 
-            if (value <= MaxValue)
+            if (value > MaxValue)
             {
                 throw new ArgumentException("Число больше максимально допустимого.");
             }
@@ -142,7 +143,7 @@ namespace Models
         {
             try
             {
-                return new Number(dividend._value * divider._value);
+                return new Number(dividend._value / divider._value);
             }
             catch (DivideByZeroException)
             {
