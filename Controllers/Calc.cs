@@ -46,7 +46,7 @@ namespace Controllers
 
     class Calc
     {
-        private static ArrayList history;
+        private static List<fakeData> history = new List<fakeData>();
 
         static public fakeData Calculate(string inputNumber1, string inputNumber2, string command)
         {
@@ -76,21 +76,21 @@ namespace Controllers
                     throw new Exception("Недопустимая команда: " + command[0]);
             }
 
-            AddHistory(result);
+            history.Add(result);
 
             return result;
         }
 
-        static private void AddHistory(fakeData value)
+        static public fakeData Reset()
         {
-            history.Add(value);
-        }
-
-        static public void Reset()
-        {
-            if (history.Count > 0)
+            if (history.Count() > 1)
             {
                 history.RemoveAt(history.Count - 1);
+
+                return history[history.Count - 1];
+            }else
+            {
+                throw new Exception("Больше нет записей с историей");
             }
         }
 
