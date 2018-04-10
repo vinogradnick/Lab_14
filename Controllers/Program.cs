@@ -27,13 +27,15 @@ namespace Controllers
 
         static void Main(string[] args)
         {
-            r(Calc.Calculate("123", "234", "+"));
+            r(Calc.Calculate("-10", "-20", "+"));
             Thread.Sleep(500);
-            r(Calc.Calculate("123", "234", "-"));
+            r(Calc.Calculate("-10", "20", "-"));
             Thread.Sleep(500);
-            r(Calc.Calculate("123", "234", "*"));
+            r(Calc.Calculate("-10", "-5", "*"));
             Thread.Sleep(500);
-            r(Calc.Calculate("123", "234", "/"));
+            r(Calc.Calculate("-21", "10", "/"));
+            Thread.Sleep(500);
+            r(Calc.Calculate("-21", "10", "%"));
             Thread.Sleep(500);
 
             Console.WriteLine();

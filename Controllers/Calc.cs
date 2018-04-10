@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Models;
 
 namespace Controllers
 {
@@ -82,8 +83,8 @@ namespace Controllers
             CheckNumber(inputNumber1, "Первый аргумент");
             CheckNumber(inputNumber2, "Второй аргумент");
 
-            fakeData value1 = new fakeData(inputNumber1),
-                     value2 = new fakeData(inputNumber2),
+            Number value1 = new Number(inputNumber1),
+                     value2 = new Number(inputNumber2),
                      result;
             
 
@@ -136,7 +137,7 @@ namespace Controllers
             {
                 throw new Exception(valueName + ": Значение превышает 25 цифр");
             }
-            if (regresult.Success)
+            if (regresult.Success && !((regresult.Value == "-" || regresult.Value == "+") && regresult.Index == 0) )
             {
                 throw new Exception(valueName + ": Встречен недопустимый символ -> " + regresult.Value);
             }
