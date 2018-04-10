@@ -8,19 +8,39 @@ namespace Controllers
 {
     class Program
     {
+        static void r(string[] b)
+        {
+            string result = "[ ";
+
+            if (b.Length >= 1)
+            {
+                result += b[0];
+            }
+            for (int i = 1; i < b.Length; i++)
+            {
+                result += ", " + b[i];
+
+            }
+            result += " ]";
+            Console.WriteLine(result);
+        }
+
         static void Main(string[] args)
         {
-            Calc.Calculate("123", "234", "+").ret();
+            r(Calc.Calculate("123", "234", "+"));
             Thread.Sleep(500);
-            Calc.Calculate("123", "234", "-").ret();
+            r(Calc.Calculate("123", "234", "-"));
             Thread.Sleep(500);
-            Calc.Calculate("123", "234", "*").ret();
+            r(Calc.Calculate("123", "234", "*"));
             Thread.Sleep(500);
-            Calc.Calculate("123", "234", "/").ret();
+            r(Calc.Calculate("123", "234", "/"));
+            Thread.Sleep(500);
 
-            Calc.Reset().ret();
-            Calc.Reset().ret();
-            Calc.Reset().ret();
+            Console.WriteLine();
+
+            r(Calc.Reset());
+            r(Calc.Reset());
+            r(Calc.Reset());
             Console.ReadLine();
         }
     }
