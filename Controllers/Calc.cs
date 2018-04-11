@@ -115,7 +115,7 @@ namespace Controllers
             return newEntry.ToStringArray();
         }
 
-        static public string[] Reset()
+        public static string[] Reset()
         {
             if (history.Count > 1)
             {
@@ -128,7 +128,7 @@ namespace Controllers
             }
         }
 
-        static private void CheckNumber(string value, string valueName)
+        private static void CheckNumber(string value, string valueName)
         {
             Regex regex = new Regex(@"[^\d]");
             Match regresult = regex.Match(value);

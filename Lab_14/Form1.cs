@@ -22,12 +22,29 @@ namespace Lab_14
 
         private string symbol = "";
 
-        private string[] Values = new string[2];
+        private string[] Values = new string[2]{"",""};
         public Form1()
         {
             InitializeComponent();
-
+            disable();
+            
         }
+
+        public void disable()
+        {
+            if (EquallyButton.Enabled)
+            {
+                EquallyButton.BackColor = Color.Gray;
+                EquallyButton.Enabled = false;
+            }
+            else
+            {
+
+                EquallyButton.Enabled = true;
+                EquallyButton.BackColor = Color.Gold;
+            }
+        }
+       
         /// <summary>
         /// Обновление данных
         /// </summary>
@@ -37,6 +54,7 @@ namespace Lab_14
             Values[0] = InputUserData;
             InputUserData = "";
             UserInputBox.Text = InputUserData;
+            disable();
         }
         /// <summary>
         /// Добавление пробелов к строке в которую вводится число
@@ -127,25 +145,22 @@ namespace Lab_14
         }
 
         private void EquallyButton_Click(object sender, EventArgs e)
-        {
-            UserInputBox.Text = InputUserData;
-            Values[1] = InputUserData;
-            InputUserData = "";
-            UserInputBox.Text = InputUserData;
-            try
-            {
-                String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
-                UserInputBox.Text = results[2];
-
-                RedrawHistoryBox();
-
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
-
+        {   
+                UserInputBox.Text = InputUserData;
+                Values[1] = InputUserData;
+                InputUserData = "";
+                UserInputBox.Text = InputUserData;
+                try
+                {
+                    String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
+                    UserInputBox.Text = results[2];
+                    RedrawHistoryBox();
+                    disable();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                } 
         }
 
         private void PlusButton_Click(object sender, EventArgs e)
