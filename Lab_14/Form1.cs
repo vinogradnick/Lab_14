@@ -26,7 +26,6 @@ namespace Lab_14
         public Form1()
         {
             InitializeComponent();
-            disable();
             
         }
 
@@ -54,7 +53,6 @@ namespace Lab_14
             Values[0] = InputUserData;
             InputUserData = "";
             UserInputBox.Text = InputUserData;
-            disable();
         }
         /// <summary>
         /// Добавление пробелов к строке в которую вводится число
@@ -145,7 +143,8 @@ namespace Lab_14
         }
 
         private void EquallyButton_Click(object sender, EventArgs e)
-        {   
+        {
+            if (Values[0].Length > 0 && InputUserData.Length > 0 && symbol.Length > 0) {
                 UserInputBox.Text = InputUserData;
                 Values[1] = InputUserData;
                 InputUserData = "";
@@ -155,12 +154,28 @@ namespace Lab_14
                     String[] results = Controllers.Calc.Calculate(Values[0], Values[1], symbol);
                     UserInputBox.Text = results[2];
                     RedrawHistoryBox();
-                    disable();
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.ToString());
-                } 
+                }
+            }else
+            {
+                if (Values[0].Length == 0)
+                {
+                    MessageBox.Show("Первое число должно быть заполнено");
+                    return;
+                }
+                if (InputUserData.Length == 0)
+                {
+                    MessageBox.Show("Второе число должно быть заполнено");
+                    return;
+                }
+                if (symbol.Length == 0)
+                {
+                    MessageBox.Show("Команда должна быть выбрана");
+                }
+            }
         }
 
         private void PlusButton_Click(object sender, EventArgs e)
