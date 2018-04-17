@@ -266,6 +266,7 @@
             this.EquallyButton.TabIndex = 15;
             this.EquallyButton.TabStop = false;
             this.EquallyButton.Text = "=";
+            this.EquallyButton.UseCompatibleTextRendering = true;
             this.EquallyButton.UseVisualStyleBackColor = false;
             this.EquallyButton.Click += new System.EventHandler(this.EquallyButton_Click);
             // 
@@ -345,6 +346,7 @@
             // 
             // UserInputBox
             // 
+            this.UserInputBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.UserInputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.UserInputBox.Location = new System.Drawing.Point(3, 9);
             this.UserInputBox.Margin = new System.Windows.Forms.Padding(0);

@@ -29,20 +29,6 @@ namespace Lab_14
             
         }
 
-        public void disable()
-        {
-            if (EquallyButton.Enabled)
-            {
-                EquallyButton.BackColor = Color.Gray;
-                EquallyButton.Enabled = false;
-            }
-            else
-            {
-
-                EquallyButton.Enabled = true;
-                EquallyButton.BackColor = Color.Gold;
-            }
-        }
        
         /// <summary>
         /// Обновление данных
@@ -339,7 +325,9 @@ namespace Lab_14
                 case Keys.NumPad9:
                     Number_9_Button_Click(sender, null);
                     break;
-                
+                case Keys.Back:
+                    RefreshButton_Click(sender,null);
+                    break;
                 
                 default:
                     break;
