@@ -40,6 +40,8 @@ namespace Lab_14
             InputUserData = "";
             UserInputBox.Text = InputUserData;
         }
+
+        private string parse(string val) => val = decimal.Parse(val).ToString();
         /// <summary>
         /// Добавление пробелов к строке в которую вводится число
         /// </summary>
@@ -62,69 +64,69 @@ namespace Lab_14
         private void Number_3_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "3";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
         }
 
         private void Number_2_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "2";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_1_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "1";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_4_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "4";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_5_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "5";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_6_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "6";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_9_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "9";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_8_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "8";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_7_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "7";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 
         private void Number_0_Button_Click(object sender, EventArgs e)
         {
             InputUserData += "0";
-            UserInputBox.Text = InputUserData;
+            UserInputBox.Text = parse(InputUserData);
 
         }
 

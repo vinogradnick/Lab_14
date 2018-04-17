@@ -352,7 +352,6 @@
             this.UserInputBox.Margin = new System.Windows.Forms.Padding(0);
             this.UserInputBox.MaxLength = 25;
             this.UserInputBox.Name = "UserInputBox";
-            this.UserInputBox.ReadOnly = true;
             this.UserInputBox.Size = new System.Drawing.Size(607, 47);
             this.UserInputBox.TabIndex = 22;
             this.UserInputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
