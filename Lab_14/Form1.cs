@@ -41,7 +41,20 @@ namespace Lab_14
             UserInputBox.Text = InputUserData;
         }
 
-        private string parse(string val) => val = decimal.Parse(val).ToString();
+        private string parse(string val)
+        {
+            try
+            {
+                return decimal.Parse(val).ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return val;
+        }
+
         /// <summary>
         /// Добавление пробелов к строке в которую вводится число
         /// </summary>
@@ -145,7 +158,7 @@ namespace Lab_14
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.ToString());
+                    MessageBox.Show(exception.Message);
                 }
             }else
             {

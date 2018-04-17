@@ -137,10 +137,8 @@ namespace Controllers
             {
                 throw new Exception(valueName + ": Значение превышает 25 цифр");
             }
-            if (regresult.Success && !((regresult.Value == "-" || regresult.Value == "+") && regresult.Index == 0) )
-            {
-                throw new Exception(valueName + ": Встречен недопустимый символ -> " + regresult.Value);
-            }
+           
+
         }
     }
 }
