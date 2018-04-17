@@ -207,11 +207,6 @@ namespace Lab_14
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             try
@@ -260,6 +255,95 @@ namespace Lab_14
         {
             symbol = "%";
             RefreshData();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            var code = e.KeyCode;
+            switch (code)
+            {
+                   case Keys.Add:
+                       PlusButton_Click(sender,null);
+                       break;
+                case Keys.Multiply:
+                    MultiplicationButton_Click(sender,null);
+                    break;
+                case Keys.Divide:
+                    DivisionButton_Click(sender,null);
+                    break;
+                case Keys.OemMinus:
+                    MinusButton_Click(sender,null);
+                    break;
+                case Keys.D0:
+                    Number_0_Button_Click(sender, null);
+                    break;
+                case Keys.D1:
+                    Number_1_Button_Click(sender,null);
+                    break;
+                case Keys.D2:
+                    Number_2_Button_Click(sender,null);
+                    break;
+                case Keys.D3:
+                    Number_3_Button_Click(sender,null);
+                    break;
+                case Keys.D4:
+                    Number_4_Button_Click(sender,null);
+                    break;
+                case Keys.D5:
+                    Number_5_Button_Click(sender,null);
+                    break;
+                case Keys.D6:
+                    Number_6_Button_Click(sender,null);
+                    break;
+                case Keys.D7:
+                    Number_7_Button_Click(sender, null);
+                    break;
+                case Keys.D8:
+                    Number_8_Button_Click(sender, null);
+                    break;
+                case Keys.D9:
+                    Number_9_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad0:
+                    Number_0_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad1:
+                    Number_1_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad2:
+                    Number_2_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad3:
+                    Number_3_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad4:
+                    Number_4_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad5:
+                    Number_5_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad6:
+                    Number_6_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad7:
+                    Number_7_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad8:
+                    Number_8_Button_Click(sender, null);
+                    break;
+                case Keys.NumPad9:
+                    Number_9_Button_Click(sender, null);
+                    break;
+                
+                
+                default:
+                    break;
+            }
         }
     }
 }
