@@ -45,7 +45,7 @@ namespace Lab_14
         {
             try
             {
-                return decimal.Parse(val).ToString();
+                return decimal.Parse(val).ToString("N0");
             }
             catch (Exception e)
             {
